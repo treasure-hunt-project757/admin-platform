@@ -1,0 +1,25 @@
+.pdf-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;  
+    padding: 1.04vw;
+    width: 50%; 
+    color: white;
+
+    .react-pdf__Document {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .react-pdf__Page {
+        margin: 2.08vw 0; 
+        box-shadow: 0 0 0.83vw rgba(0, 0, 0, 0.5);
+    }
+
+    .react-pdf__message {
+        padding: 2.08vw;
+        color: white;
+    }
+}

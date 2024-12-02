@@ -1,0 +1,191 @@
+@import "../../../../themes/mixins";
+@import "../../../../themes/variables";
+
+.new-sector-page {
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
+  .hero-container-part-one {
+    height: 19vw;
+    background-color: $secondary-whitegrey-color;
+    border-radius: 0 0 0 10vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    .hero-content {
+      display: flex;
+      flex-direction: row;
+      padding: 4vw;
+
+      .hero-img {
+        margin-top: -4.5vw;
+        flex: 1;
+        width: 30vw;
+        height: 20vw;
+      }
+
+      .hero-right {
+        flex: 1; // Take up remaining space
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4vw;
+        .title {
+          @include font_style;
+          color: $secondary-darkgreen-color;
+          font-size: 4vw;
+          font-weight: 500;
+          margin-top: -5vw;
+          width: 43vw;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .inputs-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5vw;
+    .new-sector {
+      position: relative;
+      background: transparent;
+      width: 20vw;
+      margin-left: 2.5vw;
+      .sector-input {
+        background-color: #d6d6d67f;
+        border-color: transparent;
+        @include font_style;
+        font-size: 1vw;
+        padding: 0.5vw 3vw 0.5vw 0vw;
+        margin-bottom: 1rem;
+        width: 15vw;
+        height: 2.5vw;
+        text-align: right;
+      }
+      .hospital-icon {
+        position: absolute;
+        width: 2vw;
+        height: 2vw;
+        top: 10%;
+        transform: translateX(-120%);
+      }
+    }
+    .admin-user-name,
+    .color-picker {
+      position: relative;
+      background: transparent;
+      width: 20vw;
+      margin-left: 2.5vw;
+      .admin-user-name-input,
+      .color-picker-input {
+        background-color: #d6d6d67f;
+        border-color: transparent;
+        @include font_style;
+        font-size: 1vw;
+        padding: 0.5vw 3vw 0.5vw 0vw;
+        margin-bottom: 1rem;
+        width: 15vw;
+        height: 2.5vw;
+        text-align: right;
+      }
+      .navbar-icon {
+        position: absolute;
+        width: 1.5vw;
+        height: 1.5vw;
+        top: 10%;
+        transform: translateX(-130%);
+      }
+    }
+    .navbar-icon-color {
+      position: absolute;
+      width: 2vw;
+      height: auto;
+      transform: translate(-110%);
+      cursor: pointer;
+      margin-top: 0.4vw;
+    }
+    .admin-code {
+      position: relative;
+      background: transparent;
+      width: 20vw;
+      margin-left: 2.5vw;
+      .admin-code-input {
+        background-color: #d6d6d67f;
+        border-color: transparent;
+        @include font_style;
+        font-size: 1vw;
+        padding: 0.5vw 3vw 0.5vw 0vw;
+        margin-bottom: 1rem;
+        width: 15vw;
+        height: 2.5vw;
+        text-align: right;
+      }
+      .navbar-icon {
+        position: absolute;
+        width: 1.5vw;
+        height: 1.5vw;
+        top: 10%;
+        transform: translateX(-130%);
+      }
+      .view-password-icon {
+        position: absolute;
+        width: 1.5vw;
+        height: 1.5vw;
+        top: 15%;
+        transform: translateX(-950%);
+      }
+    }
+  }
+
+  // Add animations for the Hero component
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-container {
+    animation: slideIn 0.5s forwards; // Apply the animation to the hero-container
+  }
+  .final-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 2vw;
+    .button-s {
+      padding: 0.5rem 1rem;
+      background-color: $secondary-white-color;
+      border-color: $secondary-darkgreen-color;
+      @include font_style;
+      color: $secondary-darkgreen-color;
+      margin-top: 2vw;
+      font-size: 2vw;
+      width: 20vw;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        color: white;
+        background-color: $primary-green-logo-color;
+        border-color: $primary-pink-logo-color;
+      }
+    }
+  }
+  .color-picker-popup {
+    position: absolute;
+    margin-top: -21vw;
+  }
+}

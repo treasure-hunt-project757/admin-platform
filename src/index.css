@@ -1,0 +1,23 @@
+:root {
+  --dark-primaryColor: #000000;
+  --grey-primaryColor: #979797;
+  --offwhite-secondaryColor: #f9f4ea;
+  --yellow-secondaryColor: #f5be00;
+  --white-secondaryColor: #fafafa;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  max-width: 375px;
+  margin: 0 auto;
+}

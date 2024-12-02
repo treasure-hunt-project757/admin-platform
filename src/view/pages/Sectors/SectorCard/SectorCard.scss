@@ -1,0 +1,120 @@
+@import "../../../themes/mixins";
+@import "../../../themes/variables";
+.sector-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 200px;
+  padding: 16px;
+  cursor: pointer;
+  background-image: url("../../../photos/CardBG.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .card-header,
+  .sector-card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+  }
+
+  .card-header {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    padding: 1vw;
+    justify-content: space-between;
+    border-radius: 12px;
+
+    .title {
+      font-weight: 600;
+      font-size: 1.5vw;
+      color: $secondary-white-color;
+      white-space: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      margin-right: 1vw;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.5vw;
+      .edit-button,
+      .delete-button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      .delete-icon {
+        width: 2.8vw;
+        height: 2.5vw;
+      }
+      .edit-icon {
+        margin-left: -1vw;
+        margin-right: 2vw;
+        width: 2vw;
+        height: 2.3vw;
+      }
+    }
+  }
+
+  .sector-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+
+    .sections {
+      display: flex;
+      flex-direction: column;
+      gap: 1vw;
+      padding-left: 1vw;
+      padding-right: 1vw;
+
+      .section-title {
+        font-size: 1.5vw;
+        color: $secondary-white-color;
+        text-align: right;
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+}

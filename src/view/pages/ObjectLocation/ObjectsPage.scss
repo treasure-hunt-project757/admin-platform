@@ -1,0 +1,63 @@
+@import "../../themes/mixins";
+@import "../../themes/variables";
+.sectors-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw;
+  padding-top: 3vw;
+}
+.link {
+  text-decoration: none;
+}
+.content {
+  width: 100%;
+  // max-width: 1200px;
+}
+
+.sector-grid {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: end;
+  column-gap: 1vw;
+  overflow-y: scroll;
+  height: 37vw;
+}
+.sector-card {
+  flex: 0 0 calc(33.33% - 1vw);
+  margin-bottom: 2vw;
+}
+
+.add-sector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vw;
+  width: 25vw;
+  .link {
+    text-decoration: none;
+  }
+}
+
+.add-sector-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $secondary-white-color;
+  @include font_style;
+  color: $secondary-darkgreen-color;
+  font-size: 1.5vw;
+  width: 22vw;
+  height: 5vw;
+  text-align: right;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    color: white;
+    background-color: $primary-green-logo-color;
+    border-color: $primary-pink-logo-color;
+  }
+}

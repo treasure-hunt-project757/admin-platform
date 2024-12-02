@@ -1,0 +1,63 @@
+@import "../../../themes/mixins";
+@import "../../../themes/variables";
+
+.object-card {
+    display: flex;
+    width: 22vw;
+    height: 15vw;
+    padding: 2vw;
+    flex-direction: column;
+    align-items: end;
+    gap: 1vw;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      transform: scale(1.05);
+    }
+    cursor: pointer;
+    .card-header {
+        display: flex;
+        width: 100%;
+        justify-content: end;
+        .title {
+          @include font-style;
+          font-weight: 600;
+          font-size: 2vw;
+          width: 100%;
+          color: $secondary-white-color;
+        }
+        .buttons {
+          display: flex;
+          width: 100%;
+          .edit-button,
+          .delete-button {
+            background: transparent;
+            border: transparent;
+            cursor: pointer;
+          }
+          .edit-icon,
+          .delete-icon {
+            width: 2vw;
+            height: 2vw;
+            margin-left: -0.5vw;
+          }
+        }
+      }
+      .object-card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        .sections {
+          display: flex;
+          flex-direction: column;
+          gap: 1vw;
+          .section-title {
+            @include font-style;
+            font-size: 1.5vw;
+            color: $secondary-white-color;
+            text-align: right;
+          }
+        }
+      }
+}

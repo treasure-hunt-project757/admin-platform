@@ -1,0 +1,222 @@
+@import "../../../themes/mixins";
+@import "../../../themes/variables";
+
+.main-container-edit-object {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-image: url("../../../photos/ContenBG.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 4vw;
+  overflow: hidden;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+  }
+
+  .back-link {
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    z-index: 3;
+    text-decoration: none;
+
+    .back-arrow-icon {
+      width: 5vw;
+      height: 5vw;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .edit-object-container {
+    width: 40vw;
+    height: 55vw;
+    background-image: url("../../../photos/CardBG.jpg");
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 2vw;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    animation: fadeInUp 0.6s ease-out;
+    overflow-y: scroll;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 55vw * 1.5;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      z-index: -1;
+    }
+
+    .edit-object-title {
+      @include font-style;
+      font-weight: 600;
+      font-size: large;
+      color: $secondary-white-color;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 2vw;
+    }
+
+    .input-group {
+      margin-bottom: 1.5vw;
+      width: 100%;
+
+      .input-label {
+        @include font-style;
+        font-weight: 400;
+        font-size: large;
+        color: $secondary-white-color;
+        text-align: right;
+        width: 100%;
+        margin-bottom: 0.5vw;
+      }
+
+      .object-input,
+      .object-textarea {
+        width: 100%;
+        padding: 1vw;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1.2vw;
+        background: #f5f5f5;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        margin-top: 1vw;
+
+        &:focus {
+          border-color: $primary-pink-logo-color;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .object-textarea {
+        height: 4vw;
+      }
+    }
+
+    .options-container {
+      width: 100%;
+
+      .option-section {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+        margin-bottom: 2vh;
+
+        .input-label {
+          margin-bottom: 0;
+          font-size: large;
+          color: $secondary-white-color;
+        }
+
+        .file-upload-label {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+        }
+
+        .file-upload-icon {
+          width: 3vw;
+          height: 3vw;
+        }
+      }
+      .object-media-list {
+        width: 100%;
+        .image-count {
+          color: #f5f5f5;
+        }
+        .image-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+          gap: 1vw;
+        }
+
+        .image-grid-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 1vh;
+          box-sizing: border-box;
+
+          .img-media {
+            width: 100%;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 0.5vw;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+
+          .delete-image-btn {
+            margin-top: 1vh;
+            padding: 0.5vh 2vw;
+            background-color: $primary-pink-logo-color;
+            border: none;
+            color: $secondary-white-color;
+            font-size: 1.4vh;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+              background-color: darken($primary-pink-logo-color, 10%);
+            }
+          }
+        }
+      }
+    }
+
+    .save-object-button {
+      margin-top: 3vh;
+      padding: 1.2vh 5vw;
+      background-color: $primary-green-logo-color;
+      border: none;
+      border-radius: 0.5vw;
+      @include font_style;
+      color: $secondary-white-color;
+      font-size: 1.8vh;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: block;
+      width: fit-content;
+
+      &:hover {
+        background-color: darken($primary-green-logo-color, 10%);
+      }
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

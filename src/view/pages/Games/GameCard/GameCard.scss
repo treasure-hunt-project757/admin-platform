@@ -1,0 +1,113 @@
+@import "../../../themes/mixins";
+@import "../../../themes/variables";
+
+.game-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 200px;
+  padding: 16px;
+  cursor: pointer;
+  background-image: url("../../../photos/CardBG.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .card-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 1vw;
+    direction: rtl;
+
+    .title {
+      flex: 1;
+      color: $secondary-white-color;
+      font-size: 1.5vw;
+      font-weight: 600;
+      text-align: right;
+      margin-left: 1vw;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 0.5vw;
+      margin-right: auto;
+      direction: rtl; // Changed to RTL to flip button order
+
+      .edit-button,
+      .delete-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0.5vw;
+        transition: transform 0.2s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      .delete-icon {
+        width: 2.8vw;
+        height: 2.5vw;
+      }
+
+      .edit-icon {
+        width: 2vw;
+        height: 2.3vw;
+      }
+    }
+  }
+
+  .game-card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1;
+    width: 100%;
+
+    .sections {
+      display: flex;
+      flex-direction: column;
+      gap: 1vw;
+      padding: 0 1vw;
+
+      .section-title {
+        font-size: 1.5vw;
+        color: $secondary-white-color;
+        text-align: right;
+        direction: rtl;
+      }
+    }
+  }
+}

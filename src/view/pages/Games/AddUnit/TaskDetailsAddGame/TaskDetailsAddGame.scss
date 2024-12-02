@@ -1,0 +1,140 @@
+@import "../../../../themes/mixins";
+@import "../../../../themes/variables";
+
+.task-container-add-game {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../../photos/ContenBG.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 4vw;
+  overflow: hidden;
+
+  .overlay-add-game {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+  }
+
+  .task-details-add-game {
+    width: 40vw;
+    background-image: url("../../../../photos/CardBG.jpg");
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 2vw;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    text-align: right;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      z-index: -1;
+    }
+
+    .task-title-add-game {
+      @include font-style;
+      font-weight: 600;
+      font-size: 2.5vw;
+      color: $secondary-white-color;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 2vw;
+    }
+
+    .task-content-add-game {
+      display: flex;
+      flex-direction: column;
+      gap: 2vw;
+      width: 100%;
+      color: $secondary-white-color;
+
+      .section-title-add-game {
+        @include font-style;
+        font-size: 1.8vw;
+        font-weight: 450;
+        margin-bottom: 1vw;
+        color: $secondary-white-color;
+      }
+
+      .task-desc-add-game,
+      .text-free-add-game,
+      .q-task-text-add-game,
+      .answers-add-game div {
+        font-size: 1.6vw;
+      }
+
+      .task-media-list-add-game {
+        .section-title-add-game {
+          margin-bottom: 1vw;
+        }
+      }
+
+      .correct-answer-add-game {
+        color: $primary-green-logo-color;
+        font-weight: bold;
+      }
+    }
+
+    .add-task-button-add-game {
+      margin-top: 2vw;
+      padding: 1rem 2rem;
+      background-color: $primary-pink-logo-color;
+      color: white;
+      font-size: 1.2vw;
+      border: none;
+      border-radius: 0.5vw;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($primary-pink-logo-color, 10%);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .task-details-add-game {
+      width: 90vw;
+      padding: 4vw;
+
+      .task-title-add-game {
+        font-size: 5vw;
+      }
+
+      .task-content-add-game {
+        .section-title-add-game {
+          font-size: 4vw;
+        }
+
+        .task-desc-add-game,
+        .text-free-add-game,
+        .q-task-text-add-game,
+        .answers-add-game div {
+          font-size: 3.5vw;
+        }
+      }
+
+      .add-task-button-add-game {
+        font-size: 3.5vw;
+        padding: 1rem 3rem;
+      }
+    }
+  }
+}

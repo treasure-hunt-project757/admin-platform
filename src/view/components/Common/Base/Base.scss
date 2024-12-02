@@ -1,0 +1,22 @@
+@import "../../../themes/mixins";
+@import "../../../themes/variables";
+
+.home-page {
+  width: 100%;
+
+  .common-section-main-admin {
+    background-color: white;
+    display: flex;
+    justify-content: end;
+
+    .left-side {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .content {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

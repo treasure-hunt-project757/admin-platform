@@ -1,0 +1,25 @@
+@import "./variables";
+
+@mixin font-style {
+  font-family:  Arial, Helvetica, sans-serif;
+  color: $secondary-darkblue-color;
+  line-height: normal;
+  font-weight: 200;
+  font-style: normal;
+}
+@mixin icon-style {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+@mixin desktop {
+  @media screen and (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}

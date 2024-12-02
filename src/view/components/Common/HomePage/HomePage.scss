@@ -1,0 +1,102 @@
+@import "../../../themes/mixins";
+@import "../../../themes/variables";
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  background-image: url("../../../photos/ContenBG.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  .link {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+      z-index: -1; // Place it behind the content
+      pointer-events: none; // Allow interactions to pass through
+    }
+  }
+
+  .homePage-grid {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(20vw, 1fr)
+    ); // Adjust column size
+    column-gap: 1vw; // Adjust gap between columns
+    row-gap: 1vw; // Adjust gap between rows
+    overflow-y: auto;
+    height: 40vw;
+    width: 100%;
+    padding: 2vw;
+  }
+
+  .sector-card {
+    flex: 0 0 calc(33.33% - 1vw);
+    margin-bottom: 2vw;
+  }
+
+  .add-new {
+    .add {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 25vw;
+
+      .link {
+        text-decoration: none;
+      }
+    }
+
+    .add-button {
+      display: flex;
+      background-color: $secondary-white-color;
+      @include font_style;
+      color: $secondary-darkgreen-color;
+      font-size: 1.5vw;
+      width: 22vw;
+      height: 5vw;
+      margin-top: 1.5vw;
+      margin-bottom: 10vw;
+      text-align: right;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px; // Match the border radius of the card
+      border-color: $secondary-darkgreen-color;
+      &:hover {
+        color: white;
+        background-color: $primary-green-logo-color;
+        border-color: $primary-pink-logo-color;
+      }
+    }
+  }
+}

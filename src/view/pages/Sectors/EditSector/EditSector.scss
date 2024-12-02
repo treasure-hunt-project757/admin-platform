@@ -1,0 +1,181 @@
+@import "../../../themes/mixins";
+@import "../../../themes/variables";
+
+.edit-sector {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  //   align-items: center;
+  background-image: url("../../../photos/ContenBG.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 4vw;
+  overflow: hidden;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); // White overlay
+    z-index: 1;
+  }
+
+  .back-link {
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    z-index: 3; // Ensures back link is above the overlay
+    text-decoration: none;
+
+    .back-arrow-icon {
+      width: 5vw;
+      height: 5vw;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .sector-form-container {
+    width: 40vw;
+    height: 45vw;
+    background-image: url("../../../photos/CardBG.jpg");
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.7); // Semi-transparent black overlay
+    border-radius: 15px;
+    padding: 2vw;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    text-align: right;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInUp 0.6s ease-out; // Apply the fade-in animation here
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(
+        0,
+        0,
+        0,
+        0.7
+      ); // Semi-transparent overlay on top of the background image
+      border-radius: 15px;
+      z-index: -1; // Place the overlay behind the content
+    }
+
+    .form-title {
+      text-align: center;
+      @include font-style;
+      font-weight: 600;
+      font-size: 3vw;
+      color: $secondary-white-color;
+      width: 100%;
+    }
+
+    .form-group {
+      margin-bottom: 1.5vw;
+      width: 100%;
+
+      .form-label {
+        @include font-style;
+        font-weight: 400;
+        align-self: center;
+        font-size: 2vw;
+        color: $secondary-white-color;
+        text-align: right;
+        width: 100%;
+      }
+      .password-note {
+        color: $primary-pink-logo-color;
+        font-size: 1vw;
+        margin-top: 0.5vw;
+        text-align: right;
+      }
+
+      .input-wrapper {
+        position: relative;
+        width: 100%;
+
+        .sector-input {
+          width: 100%;
+          padding: 1vw 1vw 1vw 3vw; // Space for icons
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          font-size: 1.2vw;
+          background: #f5f5f5;
+          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
+          margin-top: 1vw;
+
+          &:focus {
+            border-color: $primary-pink-logo-color;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+        }
+
+        .input-icon {
+          position: absolute;
+          left: 1vw;
+          top: 60%;
+          transform: translateY(-50%);
+          width: 2vw;
+          height: 2vw;
+        }
+      }
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: center;
+
+      .update-button {
+        display: flex;
+        background-color: $secondary-white-color;
+        @include font_style;
+        color: $secondary-darkgreen-color;
+        font-size: 1.5vw;
+        width: 22vw;
+        height: 5vw;
+        margin-top: 1.5vw;
+        text-align: right;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px; // Match the border radius of the card
+        border-color: $secondary-darkgreen-color;
+
+        &:hover {
+          color: white;
+          background-color: $primary-green-logo-color;
+          border-color: $primary-pink-logo-color;
+        }
+      }
+    }
+  }
+
+  // Animation for a smooth fade-in effect
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
