@@ -6,7 +6,7 @@ class TrainModelApi {
     // "https://custom-fastapi-service-tm3zus3bzq-uc.a.run.app";
 
     //clone
-    "https://custom-fastapi-service-791214719127.us-central1.run.app";
+    "https://custom-fastapi-service-913716591776.us-central1.run.app";
   async retrainModel(): Promise<AxiosResponse> {
     try {
       const config = {

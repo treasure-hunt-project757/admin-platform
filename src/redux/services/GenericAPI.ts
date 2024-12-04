@@ -7,7 +7,7 @@ import router from "../../view/router/Route";
 // const URL = "https://sheba-service-gcp-tm3zus3bzq-uc.a.run.app";
 
 //clone
-const URL = "https://backend-gcp-clone-791214719127.us-central1.run.app";
+const URL = "https://backend-gcp-913716591776.us-central1.run.app";
 
 const createAxiosInstance = (): AxiosInstance => {
   const instance = axios.create({
